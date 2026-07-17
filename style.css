@@ -1,0 +1,282 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Georgia", serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff1f6,
+    #ffd9e8
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#4a2433;
+
+}
+
+
+
+/* STAR EFFECT */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle, white 2px, transparent 3px);
+
+    background-size:90px 90px;
+
+    opacity:.6;
+
+    animation:moveStars 35s linear infinite;
+
+}
+
+
+
+@keyframes moveStars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-150px);
+
+}
+
+}
+
+
+
+
+
+/* FLOATING HEARTS */
+
+.hearts::before,
+.hearts::after{
+
+content:"❤️  ✨  💗  ✨  ❤️";
+
+position:absolute;
+
+font-size:28px;
+
+animation:float 10s infinite linear;
+
+opacity:.5;
+
+}
+
+
+
+.hearts::after{
+
+left:60%;
+
+animation-duration:13s;
+
+}
+
+
+
+@keyframes float{
+
+from{
+
+transform:translateY(100vh);
+
+}
+
+to{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+
+
+
+
+
+/* MAIN */
+
+.intro{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+
+
+.moon{
+
+font-size:90px;
+
+animation:moonGlow 3s infinite alternate;
+
+}
+
+
+
+
+@keyframes moonGlow{
+
+from{
+
+filter:drop-shadow(0 0 10px #fff);
+
+}
+
+to{
+
+filter:drop-shadow(0 0 40px #ffb6cf);
+
+}
+
+}
+
+
+
+
+
+h1{
+
+font-size:55px;
+
+margin-top:20px;
+
+color:#e75480;
+
+}
+
+
+
+h1 span{
+
+color:#d94f7c;
+
+}
+
+
+
+
+
+.message{
+
+margin-top:25px;
+
+font-size:22px;
+
+line-height:1.7;
+
+color:#6b3b4d;
+
+}
+
+
+
+
+button{
+
+margin-top:40px;
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+45deg,
+#ff7fa8,
+#ffb6cf
+);
+
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 10px 30px rgba(255,100,150,.3);
+
+
+transition:.3s;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:40px;
+
+}
+
+
+.message{
+
+font-size:18px;
+
+}
+
+
+.moon{
+
+font-size:70px;
+
+}
+
+}
