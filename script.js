@@ -1,8 +1,9 @@
 // PROJECT LUNAR v1.0
 // Beginning interaction
+
 function startJourney(){
 
-    document.querySelector(".intro").style.display="none";
+    document.querySelector(".intro").style.display = "none";
 
     document
     .getElementById("envelopeScene")
@@ -28,11 +29,8 @@ May the winds stop blowing.
 My mind will always revolve around one person,
 and that's you, beautiful girl.
 
-Happiest birthday to you, my sweetheart,
-my charm, and my peace of mind.
-
-I hope everything goes well for you,
-and I hope you always stay happy.
+Happiest birthday to you,
+my sweetheart, my charm, and my peace of mind.
 
 I miss you so much 🥹
 
@@ -41,7 +39,6 @@ Let's make beautiful memories together.
 ❤️
 
 `;
-
 
 
 
@@ -66,7 +63,6 @@ function openLetter(){
 
 
 
-
 function typeLetter(){
 
     let text =
@@ -75,12 +71,9 @@ function typeLetter(){
 
     if(letterIndex < birthdayMessage.length){
 
-        text.innerHTML += 
-        birthdayMessage.charAt(letterIndex);
-
+        text.innerHTML += birthdayMessage.charAt(letterIndex);
 
         letterIndex++;
-
 
         setTimeout(typeLetter,45);
 
