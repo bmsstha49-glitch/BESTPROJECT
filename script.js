@@ -1,9 +1,19 @@
-// PROJECT LUNAR v1.0
-// Beginning interaction
+// ==========================
+// PROJECT LUNAR
+// COMPLETE SCRIPT
+// ==========================
 
-function startJourney(){
 
-    document.querySelector(".intro").style.display = "none";
+
+// OPEN ENVELOPE
+
+function openEnvelope(){
+
+    document
+    .getElementById("intro")
+    .classList
+    .add("hidden");
+
 
     document
     .getElementById("envelopeScene")
@@ -14,16 +24,33 @@ function startJourney(){
 
 
 
-let letterIndex = 0;
 
-const birthdayMessage = `
 
+
+// LETTER PAGES
+
+
+let currentPage = 0;
+
+
+
+const pages = [
+
+
+`
+
+<h2>
 Happy 16th Birthday, My Girl ❤️
+</h2>
 
 
 Happy birthday, my girl.
 
-This is such a special day—one that deserves to be celebrated with all my heart. I hope this little birthday message makes your day even a little brighter.
+
+This is such a special day—one that deserves to be celebrated with all my heart.
+
+
+I hope this little birthday message makes your day even a little brighter.
 
 
 May the seas run dry.
@@ -31,34 +58,34 @@ May the seas run dry.
 May the winds stop blowing.
 
 
-Even then, my mind will always revolve around one person, and that's you, my beautiful girl.
+Even then, my mind will always revolve around one person...
 
 
-Happiest birthday to you—my sweetheart, my charm, and my peace of mind.
+and that's you, my beautiful girl.
 
-
-I hope everything in your life goes well. Maybe one day you'll be my wife... of course, only with your consent, because I'm a respectful freak. 😭❤️
-
-
-Anyways, listen na...
-
-
-I miss you so, so much, Darlene. 🥹
-
-Let's meet again soon.
+`,
 
 
 
-I love...
+
+`
+
+<h2>
+I Love...
+</h2>
 
 
 Your hair.
 
+
 Your smell.
+
 
 Your presence.
 
+
 Your voice.
+
 
 Your thoughts.
 
@@ -75,9 +102,6 @@ The way you care so much.
 Even the way you scold me.
 
 
-The way you love me.
-
-
 Your eyes.
 
 Your smile.
@@ -85,18 +109,16 @@ Your smile.
 Your face—every little part of it.
 
 
-The way your hair rests on your shoulders before gently falling back down.
+`,
 
 
-Your ears.
-
-Your favourite flower.
-
-Your favourite food.
 
 
-Your favourite shade of blush, eyeliner, lip gloss, and eyeshadow—not just because they're your favourites, but because seeing the things that bring you joy makes me happy too.
+`
 
+<h2>
+Our Story ❤️
+</h2>
 
 
 When we first started dating, yes... I was different.
@@ -105,28 +127,38 @@ When we first started dating, yes... I was different.
 Maybe I've changed. Maybe I haven't changed as much as we think.
 
 
-But one thing I'll always reassure you of is this:
+But one thing I'll always reassure you of:
 
 
-You fell first... but I fell harder.
+You fell first...
 
 
-We've been through so much together—through some really difficult times—and I'm grateful for every moment because it led us here, where I get to stand beside you today.
+but I fell harder.
 
 
-It's been 1 year, 3 months, and 7 days, and every single day has been worth it.
+We've been through so much together, and I'm grateful for every moment.
 
 
-Never let go of my hand, and we'll face whatever life throws at us together. ❤️
+It's been 1 year, 3 months, and 7 days.
 
 
-Dreams don't come true unless we work for them. Otherwise, they'll always remain just dreams.
+Never let go of my hand, and we'll face whatever life throws at us together ❤️
 
 
-Let's never give up on each other, no matter what life brings.
+`,
 
 
-I'll gladly be the sailor of our little ship through every storm and every calm sea, my love.
+
+
+
+`
+
+<h2>
+Our Dreams 🌍
+</h2>
+
+
+Dreams don't come true unless we work for them.
 
 
 Let's build a life we're proud of.
@@ -138,13 +170,34 @@ Let's make our families proud.
 Let's chase our dreams.
 
 
-Let's earn, grow, and create a beautiful future together.
+Italy.
+
+Japan.
+
+Europe.
+
+USA.
+
+Australia.
 
 
-Let's travel the world just like we've always imagined—Italy, Japan, all across Europe, the USA, Australia... everywhere.
+Let's travel the world just like we imagined.
 
 
-And at the end of the day, all I truly want is for you to be respected, safe, and genuinely happy.
+`,
+
+
+
+
+
+`
+
+<h2>
+Forever ❤️
+</h2>
+
+
+At the end of the day, I only want you to be respected, safe, and genuinely happy.
 
 
 Happy 16th Birthday once again, my beautiful girl.
@@ -153,16 +206,21 @@ Happy 16th Birthday once again, my beautiful girl.
 Thank you for being you.
 
 
-I love you. ❤️
-
-`;
+I love you ❤️
 
 
-`;
+`
+
+];
+
+
+
+
 
 
 
 function openLetter(){
+
 
     document
     .getElementById("envelopeScene")
@@ -170,10 +228,12 @@ function openLetter(){
     .add("hidden");
 
 
+
     document
     .getElementById("letterScene")
     .classList
     .remove("hidden");
+
 
 
     showPage();
@@ -183,29 +243,90 @@ function openLetter(){
 
 
 
-function typeLetter(){
-
-    let text =
-    document.getElementById("letterText");
 
 
-    if(letterIndex < birthdayMessage.length){
+function showPage(){
 
-        text.innerHTML += birthdayMessage.charAt(letterIndex);
 
-        letterIndex++;
+document
+.getElementById("letterText")
+.innerHTML =
+pages[currentPage];
 
-        setTimeout(typeLetter,25);
 
-    }
 
-    else{
+if(currentPage === pages.length-1){
 
-        document
-        .getElementById("continueBtn")
-        .classList
-        .remove("hidden");
 
-    }
+document
+.getElementById("nextPageBtn")
+.classList
+.add("hidden");
+
+
+document
+.getElementById("continueBtn")
+.classList
+.remove("hidden");
+
+
+}
+
+else{
+
+
+document
+.getElementById("nextPageBtn")
+.classList
+.remove("hidden");
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+function nextPage(){
+
+
+currentPage++;
+
+
+showPage();
+
+
+}
+
+
+
+
+
+
+
+// MEMORY PAGE
+
+
+function openMemories(){
+
+
+document
+.getElementById("letterScene")
+.classList
+.add("hidden");
+
+
+
+document
+.getElementById("memoryScene")
+.classList
+.remove("hidden");
+
 
 }
