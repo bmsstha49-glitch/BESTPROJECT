@@ -195,7 +195,7 @@ function typeLetter(){
 
         letterIndex++;
 
-        setTimeout(typeLetter,45);
+        setTimeout(typeLetter,25);
 
     }
 
