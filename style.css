@@ -300,7 +300,7 @@ font-size:70px;
 
     inset:0;
 
-    display:flex;
+    display:flex !important;
 
     flex-direction:column;
 
@@ -309,7 +309,6 @@ font-size:70px;
     align-items:center;
 
     background:
-
     linear-gradient(
     135deg,
     #fff0f5,
@@ -323,6 +322,10 @@ font-size:70px;
     font-size:20px;
 
 }
+
+
+
+
 
 
 
