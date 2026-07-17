@@ -333,18 +333,21 @@ font-size:70px;
 .envelope{
 
     width:280px;
-
     height:190px;
 
     background:#ff9fbd;
 
     position:relative;
 
-    border-radius:15px;
-
     cursor:pointer;
 
-    box-shadow:
+    z-index:20;
+
+    pointer-events:auto;
+
+}
+
+    
 
     0 20px 40px rgba(220,70,120,.25);
 
