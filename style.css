@@ -625,3 +625,10 @@ to{
 }
 
 }
+#envelopeScene{
+    z-index:50;
+}
+
+#envelopeScene *{
+    pointer-events:auto;
+}
