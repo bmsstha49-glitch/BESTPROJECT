@@ -87,7 +87,8 @@ font-size:28px;
 animation:float 10s infinite linear;
 
 opacity:.5;
-
+pointer-events: none;
+    
 }
 
 
