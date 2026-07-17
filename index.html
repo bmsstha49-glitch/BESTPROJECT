@@ -17,12 +17,13 @@
 
 
 <div class="stars"></div>
-
 <div class="hearts"></div>
 
 
 
-<main class="intro">
+<!-- INTRO -->
+
+<section id="intro" class="screen">
 
 
 <div class="moon">
@@ -37,21 +38,28 @@ Happy Birthday
 </h1>
 
 
-<p class="message">
+<p>
 Every year has a day worth remembering...
 <br>
 and today belongs to you ✨
 </p>
 
 
-<button onclick="startJourney()">
+<button onclick="openEnvelope()">
 Begin The Surprise 💖
 </button>
 
-</main>
+
+</section>
 
 
-<section id="envelopeScene" class="hidden">
+
+
+
+<!-- ENVELOPE -->
+
+<section id="envelopeScene" class="screen hidden">
+
 
 <div class="envelope" onclick="openLetter()">
 
@@ -63,36 +71,114 @@ Begin The Surprise 💖
 
 </div>
 
+
 <p>
 Tap the envelope 💌
 </p>
 
+
 </section>
-<section id="letterScene" class="hidden">
+
+
+
+
+
+
+<!-- LETTER -->
+
+<section id="letterScene" class="screen hidden">
+
 
 <div class="letter-card">
 
-<h2>
-Happy Birthday, My Girl ❤️
-</h2>
-
 
 <div id="letterText"></div>
+
+
 
 <button id="nextPageBtn" onclick="nextPage()">
 Next ❤️
 </button>
 
-<button id="continueBtn" class="hidden" onclick="showMemories()">
+
+
+<button id="continueBtn" class="hidden" onclick="openMemories()">
 Continue ✨
 </button>
 
 
+
 </div>
+
 
 </section>
 
-<script src="script.js"></script>
+
+
+
+
+
+<!-- MEMORIES -->
+
+<section id="memoryScene" class="screen hidden">
+
+
+<div class="memory-card">
+
+
+<h2>
+Our Little Moments 📸❤️
+</h2>
+
+
+
+<div class="gallery">
+
+
+<div class="photo">
+
+<img src="assets/photos/photo1.jpg">
+
+<p>
+A beautiful memory ✨
+</p>
+
+</div>
+
+
+
+<div class="photo">
+
+<img src="assets/photos/photo2.jpg">
+
+<p>
+Always worth remembering ❤️
+</p>
+
+</div>
+
+
+
+<div class="photo">
+
+<img src="assets/photos/photo3.jpg">
+
+<p>
+One of my favourites 🌸
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
 
 
 
