@@ -492,3 +492,133 @@ opacity:.5;
 #envelopeScene{
     display:flex;
 }
+/* ==========================
+   LOVE LETTER SCENE
+   ========================== */
+
+
+#letterScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #fff5f8,
+    #ffd6e5
+    );
+
+    z-index:10;
+
+}
+
+
+
+
+
+.letter-card{
+
+    width:90%;
+
+    max-width:650px;
+
+    max-height:80vh;
+
+    overflow:auto;
+
+    padding:40px;
+
+
+    background:
+
+    rgba(255,255,255,.9);
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(220,70,120,.25);
+
+
+    color:#5a3040;
+
+
+    animation:
+
+    letterAppear 1s ease;
+
+}
+
+
+
+
+
+.letter-card h2{
+
+    color:#e75480;
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+#letterText{
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    white-space:pre-line;
+
+}
+
+
+
+
+
+#continueBtn{
+
+    margin-top:30px;
+
+}
+
+
+
+
+
+@keyframes letterAppear{
+
+from{
+
+    opacity:0;
+
+    transform:scale(.8) translateY(40px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:scale(1) translateY(0);
+
+}
+
+}
