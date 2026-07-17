@@ -176,7 +176,7 @@ function openLetter(){
     .remove("hidden");
 
 
-    typeLetter();
+    showPage();
 
 }
 
