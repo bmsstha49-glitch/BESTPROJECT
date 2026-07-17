@@ -1,38 +1,55 @@
 // PROJECT LUNAR v1.0
 // Beginning interaction
 
-
 function startJourney(){
 
-    const button = document.querySelector("button");
+    const intro = document.querySelector(".intro");
 
-    const message = document.querySelector(".message");
-
-    button.style.transform = "scale(0)";
-
-    button.style.opacity = "0";
+    intro.style.opacity = "0";
 
 
     setTimeout(()=>{
 
-        message.innerHTML =
-        `
-        🌸 A little surprise is waiting...
-        <br><br>
-        Made especially for you ❤️
-        `;
+        intro.style.display = "none";
 
 
-        message.style.fontSize="24px";
+        document
+        .getElementById("envelopeScene")
+        .classList
+        .remove("hidden");
 
 
-    },500);
+    },800);
 
-
-
-    createSparkles();
 
 }
+
+
+
+
+
+function openLetter(){
+
+    const envelope =
+    document.querySelector(".envelope");
+
+
+    envelope.style.transform =
+    "scale(0.8) rotateX(90deg)";
+
+
+    setTimeout(()=>{
+
+
+        alert("Letter scene coming next ❤️");
+
+
+    },700);
+
+
+}
+
+
 
 
 
