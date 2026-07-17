@@ -16,22 +16,49 @@ body{
     linear-gradient(
     135deg,
     #fff1f6,
-    #ffd9e8
+    #ffd3e2
     );
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:#4a2433;
+    color:#5a3040;
 
 }
 
 
 
-/* STAR EFFECT */
+/* COMMON */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+.screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:5;
+
+}
+
+
+
+
+
+/* BACKGROUND */
 
 .stars{
 
@@ -45,26 +72,24 @@ body{
 
     background-size:90px 90px;
 
-    opacity:.6;
+    opacity:.5;
 
-    animation:moveStars 35s linear infinite;
+    animation:starsMove 30s linear infinite;
+
+    pointer-events:none;
 
 }
 
 
 
-@keyframes moveStars{
+@keyframes starsMove{
 
 from{
-
 transform:translateY(0);
-
 }
 
 to{
-
 transform:translateY(-150px);
-
 }
 
 }
@@ -73,30 +98,44 @@ transform:translateY(-150px);
 
 
 
-/* FLOATING HEARTS */
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+
 
 .hearts::before,
 .hearts::after{
 
-content:"❤️  ✨  💗  ✨  ❤️";
+    content:"❤️ ✨ 💗 ✨ ❤️";
 
-position:absolute;
+    position:absolute;
 
-font-size:28px;
+    font-size:30px;
 
-animation:float 10s infinite linear;
+    opacity:.5;
 
-opacity:.5;
-.hearts{
+    animation:float 10s linear infinite;
+
     pointer-events:none;
+
 }
+
 
 
 .hearts::after{
 
-left:60%;
+    left:50%;
 
-animation-duration:13s;
+    animation-duration:14s;
 
 }
 
@@ -123,203 +162,90 @@ transform:translateY(-120vh);
 
 
 
-/* MAIN */
 
-.intro{
-
-position:relative;
-
-z-index:2;
-
-text-align:center;
-
-padding:30px;
-
-}
-
-
+/* INTRO */
 
 .moon{
 
-font-size:90px;
+    font-size:90px;
 
-animation:moonGlow 3s infinite alternate;
+    animation:glow 3s infinite alternate;
 
 }
 
 
-
-
-@keyframes moonGlow{
+@keyframes glow{
 
 from{
 
-filter:drop-shadow(0 0 10px #fff);
+filter:drop-shadow(0 0 10px white);
 
 }
 
 to{
 
-filter:drop-shadow(0 0 40px #ffb6cf);
+filter:drop-shadow(0 0 40px #ff9fc1);
 
 }
 
 }
-
-
 
 
 
 h1{
 
-font-size:55px;
+    font-size:50px;
 
-margin-top:20px;
+    color:#e75480;
 
-color:#e75480;
+    margin:20px;
 
 }
-
 
 
 h1 span{
 
-color:#d94f7c;
+    color:#d94f7c;
 
 }
 
 
 
+p{
 
+    font-size:20px;
 
-.message{
-
-margin-top:25px;
-
-font-size:22px;
-
-line-height:1.7;
-
-color:#6b3b4d;
+    line-height:1.6;
 
 }
+
 
 
 
 
 button{
 
-margin-top:40px;
+    margin-top:30px;
 
-padding:16px 40px;
+    padding:15px 35px;
 
-border:none;
+    border:none;
 
-border-radius:50px;
-
-background:
-
-linear-gradient(
-45deg,
-#ff7fa8,
-#ffb6cf
-);
-
-
-color:white;
-
-font-size:18px;
-
-cursor:pointer;
-
-
-box-shadow:
-
-0 10px 30px rgba(255,100,150,.3);
-
-
-transition:.3s;
-
-}
-
-
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-
-
-
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-
-h1{
-
-font-size:40px;
-
-}
-
-
-.message{
-
-font-size:18px;
-
-}
-
-
-.moon{
-
-font-size:70px;
-
-}
-
-}
-
-/* =========================
-   ENVELOPE SCENE
-   ========================= */
-
-
-.hidden{
-
-    display:none !important;
-
-}
-
-
-
-#envelopeScene{
-
-    position:fixed;
-
-    inset:0;
-
-    display:flex !important;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
+    border-radius:50px;
 
     background:
+
     linear-gradient(
-    135deg,
-    #fff0f5,
-    #ffd1df
+    45deg,
+    #ff7fa8,
+    #ffb6cf
     );
 
-    z-index:5;
+    color:white;
 
-    color:#d94f7c;
+    font-size:18px;
 
-    font-size:20px;
+    cursor:pointer;
 
 }
 
@@ -327,15 +253,18 @@ font-size:70px;
 
 
 
-
+/* ENVELOPE */
 
 
 .envelope{
 
     width:280px;
-    height:190px;
+
+    height:180px;
 
     background:#ff9fbd;
+
+    border-radius:15px;
 
     position:relative;
 
@@ -343,124 +272,13 @@ font-size:70px;
 
     z-index:20;
 
-    pointer-events:auto;
-
-}
-
-    
-
-    0 20px 40px rgba(220,70,120,.25);
-
-    animation:floatEnvelope 3s ease-in-out infinite;
+    animation:bounce 3s infinite;
 
 }
 
 
 
-
-.envelope::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-
-    background:#ffb6cf;
-
-
-    clip-path:polygon(
-    0 0,
-    100% 0,
-    50% 55%
-    );
-
-    border-radius:15px 15px 0 0;
-
-}
-
-
-
-
-
-.flap{
-
-    position:absolute;
-
-    top:0;
-
-    width:100%;
-
-    height:100%;
-
-}
-
-
-
-
-.seal{
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-
-    width:65px;
-
-    height:65px;
-
-    border-radius:50%;
-
-
-    background:#e75480;
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    font-size:30px;
-
-
-    box-shadow:
-
-    0 0 25px rgba(231,84,128,.7);
-
-}
-
-
-
-
-
-#envelopeScene p{
-
-    margin-top:35px;
-
-    animation:pulse 2s infinite;
-
-}
-
-
-
-
-
-@keyframes floatEnvelope{
-
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
+@keyframes bounce{
 
 50%{
 
@@ -473,38 +291,45 @@ transform:translateY(-20px);
 
 
 
+.flap{
 
-@keyframes pulse{
+    position:absolute;
 
+    width:100%;
 
-50%{
+    height:100%;
 
-opacity:.5;
+    background:#ffb6cf;
+
+    clip-path:polygon(
+    0 0,
+    100% 0,
+    50% 55%
+    );
 
 }
 
-}
-
-#envelopeScene .envelope{
-    display:block !important;
-    opacity:1 !important;
-    visibility:visible !important;
-}
 
 
-#envelopeScene{
-    display:flex;
-}
-/* ==========================
-   LOVE LETTER SCENE
-   ========================== */
+.seal{
 
+    position:absolute;
 
-#letterScene{
+    top:50%;
 
-    position:fixed;
+    left:50%;
 
-    inset:0;
+    transform:translate(-50%,-50%);
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#e75480;
+
+    color:white;
 
     display:flex;
 
@@ -512,20 +337,15 @@ opacity:.5;
 
     align-items:center;
 
-    background:
-
-    linear-gradient(
-    135deg,
-    #fff5f8,
-    #ffd6e5
-    );
-
-    z-index:10;
+    font-size:28px;
 
 }
 
 
 
+
+
+/* LETTER */
 
 
 .letter-card{
@@ -538,46 +358,41 @@ opacity:.5;
 
     overflow:auto;
 
-    padding:40px;
+    padding:35px;
 
-
-    background:
-
-    rgba(255,255,255,.9);
-
+    background:white;
 
     border-radius:25px;
-
 
     box-shadow:
 
     0 20px 50px rgba(220,70,120,.25);
 
-
-    color:#5a3040;
-
-
-    animation:
-
-    letterAppear 1s ease;
+    animation:appear 1s;
 
 }
 
 
 
+@keyframes appear{
 
+from{
 
-.letter-card h2{
+opacity:0;
 
-    color:#e75480;
-
-    font-size:32px;
-
-    margin-bottom:25px;
+transform:scale(.8);
 
 }
 
+to{
 
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
 
 
 
@@ -595,9 +410,51 @@ opacity:.5;
 
 
 
-#continueBtn{
+/* MEMORY */
 
-    margin-top:30px;
+.memory-card{
+
+    width:90%;
+
+}
+
+
+
+.gallery{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.photo{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    width:250px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+
+
+.photo img{
+
+    width:100%;
+
+    border-radius:10px;
 
 }
 
@@ -605,39 +462,23 @@ opacity:.5;
 
 
 
-@keyframes letterAppear{
+@media(max-width:600px){
 
-from{
 
-    opacity:0;
+h1{
 
-    transform:scale(.8) translateY(40px);
+font-size:38px;
+
+}
+
+
+.envelope{
+
+width:240px;
+
+height:160px;
 
 }
 
 
-to{
-
-    opacity:1;
-
-    transform:scale(1) translateY(0);
-
-}
-
-}
-#envelopeScene{
-    z-index:50;
-}
-
-#envelopeScene *{
-    pointer-events:auto;
-}
-.envelope {
-    position: relative;
-    z-index: 9999;
-    cursor: pointer;
-}
-
-#envelopeScene {
-    z-index: 9998;
 }
